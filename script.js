@@ -1,19 +1,19 @@
-const checkCelsius = document.getElementById('celsius');
-const checkFahren = document.getElementById('fahrenheit');
+const checkCelsius = document.querySelector('#celsius');
+const checkFahren = document.querySelector('#fahrenheit');
 
 // convert button
-document.getElementById('convertBtn').onclick = function(){
-    const inputNum = document.getElementById('number').value;
+document.querySelector('#convertBtn').onclick = function(){
+    const inputNum = document.querySelector('#number').value;
     const toNum = Number(inputNum);
 
     // conversion
     if(checkCelsius.checked){
         let toCelsi = (toNum-32)/1.8;
-        document.getElementById('result').value = toCelsi+"°C";
+        document.querySelector('#result').value = toCelsi.toFixed(2)+"°C";
     }
     else if(checkFahren.checked){
         let toFahren = (toNum*1.8)+32;
-        document.getElementById('result').value = toFahren+"°F";
+        document.querySelector('#result').value = toFahren.toFixed(2)+"°F";
     }
     else{
         window.alert("Pick at least one in the convert selection.")
@@ -21,7 +21,7 @@ document.getElementById('convertBtn').onclick = function(){
 }
 
 //reset button
-document.getElementById('resetBtn').onclick = function(){
-    document.getElementById('number').value = '';
-    document.getElementById('result').value = '';
+document.querySelector('#resetBtn').onclick = function(){
+    document.querySelector('#number').value = '';
+    document.querySelector('#result').value = '';
 }
